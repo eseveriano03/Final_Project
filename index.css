@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+body {
+    width: 100%;
+    background-color: #000;
+    height: 100vh;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    padding: 1em;
+}
+
+.header h1 {
+    color: #FFF;
+    text-align: center;
+
+}
+
+.words {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+
+}
+
+.words-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.words-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.word {
+    border: 1px solid #353535;
+    width: 4em;
+    height: 4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    border-radius:  4px;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.keyword {
+    width: 100%;
+    padding-bottom: 1em;
+}
+
+.keyboard-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.keyboard button{
+    background-color: #000;
+    color:  #FFF;
+    outline: none;
+    border: 1px solid #353535;
+    padding: 1em;
+    cursor: pointer;
+    margin-bottom: 0.5em;
+    border-radius: 4px;
+}
+
+.correctPosition{
+    background-color: #53BE80;
+    color: white;
+}
+
+.badPosition{
+    background-color: #F8C471;
+    color: white;
+}
+
+.notInTheWord{
+    background-color: #839192;
+    color: white;
+}
