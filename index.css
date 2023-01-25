@@ -59,6 +59,18 @@ body {
 
 }
 
+.pointCounter{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.counter{
+    padding-bottom: 8em;
+    color: white;
+    text-align: center;
+}
+
 .keyword {
     width: 100%;
     padding-bottom: 1em;
@@ -94,5 +106,10 @@ body {
 
 .notInTheWord{
     background-color: #839192;
+    color: white;
+}
+
+.clean{
+    background-color: #000;
     color: white;
 }
