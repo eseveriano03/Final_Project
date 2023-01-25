@@ -99,20 +99,3 @@ function keypress(key) {
         populateWord(key);
     }
 }
-
-const upPoints = {
-    cont: 0, //
-
-    get getCont() {
-        return this.cont;
-    },
-
-    set changeCont(newCont) {
-        this.cont = newCont;
-    }
-}
-    function UpCount() {
-        contGraf = document.getElementById('points');
-        upPoints.changeCont = upPoints.getCont + 1
-        contGraf.textContent = (upPoints.getCont);
-    }
