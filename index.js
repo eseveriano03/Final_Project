@@ -2,8 +2,18 @@ const buttonElements = document.querySelectorAll('button');
 let row = 1; // Número total de columnas
 let letter = 1; // Número total de filas
 let points = 0;
-const wordCollection = ['abeto', 'actor', 'aguas']; //
-//const wordForTheDay = 'Shout'; // Este valor es definido por una función que escoge una palabra aleatria de toda una colección de palabras no mayores a 5 caracteres.
+const wordCollection = ['abeto', 'actor', 'aguas', 'agudo', 'alado', 'albas', 'altar', 'atizo', 'avala',
+                        'babas', 'bacas', 'bache', 'bajes', 'balas', 'banco', 'bicho', 'bizco', 'bueno',
+                        'busca', 'cajas', 'calar', 'calas', 'calca', 'calla', 'calma', 'camba', 'campo',
+                        'canas', 'canto', 'capto', 'caras', 'danza', 'carro', 'casas', 'catar', 'cejas',
+                        'celia', 'cenas', 'cepas', 'cerca', 'cerco', 'cerdo', 'chile', 'china', 'ciego',
+                        'cines', 'citas', 'clara', 'clavo', 'dados', 'dagas', 'datos', 'donar', 'dejar',
+                        'dejes', 'denso', 'dices', 'divos', 'dotes', 'dunas', 'dures', 'duros', 'ellos',
+                        'echas', 'edito', 'elevo', 'emulo', 'enoje', 'error', 'fallo', 'falta', 'feria',
+                        'fetos', 'fijos', 'filas', 'filia', 'finca', 'gafas', 'galas', 'gales', 'galos',
+                        'ganas', 'ganes', 'gases', 'gasto', 'giras', 'gordo', 'gorro', 'grave', 'grito',
+                        'hacer', 'halos', 'hasta', 'heces', 'hielo', 'nacer', 'nadar', 'narro', 'natas',
+                        'naves']; // Este valor es definido por una función que escoge una palabra aleatria de toda una colección de palabras no mayores a 5 caracteres.
 const wordElements = document.querySelectorAll('.words-row');// Esta variable trae consigo la palabra, ya que la clase 'words-row' contiene 5 valores que se ingresan en los contenedores.
 let gameOver = false; //
 let guessedCorrectly = false; //
@@ -22,14 +32,14 @@ function populateWord(key) { // La función principal de este arreglo es verfica
     }
 }
 
-const prueba = wordCollection[Math.floor(Math.random() * wordCollection.length)]
+const wordForTheDay = wordCollection[Math.floor(Math.random() * wordCollection.length)]
 
 function checkWord() {
     const letterElements = wordElements[row - 1].querySelectorAll('.word'); // La función trae los valores en los contenedores y los
     let numCorrectLetter = 0;                                                 // compara, revisando que sean el mismo valor que hay en la variable
 
     letterElements.forEach((element, index) => {//wordForTheDay
-        const indexOfLetterInWordOfTheDay = prueba.toLowerCase().indexOf
+        const indexOfLetterInWordOfTheDay = wordForTheDay.toLowerCase().indexOf
         (element.innerText.toLowerCase());
 
         if(indexOfLetterInWordOfTheDay === index){ // En caso de que alguno de los valores esté dentro de la variable y esté en la misma posición, le asigna la clase
@@ -45,7 +55,14 @@ function checkWord() {
         gameOver = true;
         guessedCorrectly = true;
 
-        alert('You have done! Congratulations, now you have 1 point more. :D')
+        alert('You have done! Congratulations, now you have 1 point more. :D');
+    } else if(row === 6){
+        gameOver = true;
+        alert('Better luck next time! The word was ' + wordForTheDay)
+
+        for (n = 0; n < wordElements.length; n++) {
+            deleteLetter();
+        }
     }
 }
 
@@ -83,3 +100,19 @@ function keypress(key) {
     }
 }
 
+const upPoints = {
+    cont: 0, //
+
+    get getCont() {
+        return this.cont;
+    },
+
+    set changeCont(newCont) {
+        this.cont = newCont;
+    }
+}
+    function UpCount() {
+        contGraf = document.getElementById('points');
+        upPoints.changeCont = upPoints.getCont + 1
+        contGraf.textContent = (upPoints.getCont);
+    }
